@@ -1,41 +1,48 @@
 import { useState } from "react";
 
-const Form = ({ listTransactions, setListTransactions }) => {
-  const [inputDescription, setInputDescription] = useState("");
-  const [inputValue, setInputValue] = useState("");
-  const [inputType, setInputType] = useState("");
+const Form = ({ callback }) => {
+  const [formValues, setFormValues] = useState({});
 
-  const handleForm = () => {
-    console.log(inputDescription);
-    console.log(inputValue);
-    console.log(inputType);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+
+  const handleClick = (callback) => {
+    callback(formValues);
   };
 
   return (
-    <form onSubmit={(event) => handleForm(event.preventDefault())}>
+    <form onSubmit={handleSubmit}>
       <input
+        name="description"
         type="text"
         placeholder="Digite aqui sua descrição"
-        value={inputDescription}
-        onChange={(event) => setInputDescription(event.target.value)}
+        value={formValues.description}
+        onChange={handleInputChange}
       />
       <input
+        name="value"
         type="text"
         placeholder="R$"
-        value={inputValue}
-        onChange={(event) => setInputValue(event.target.value)}
+        value={formValues.value}
+        onChange={handleInputChange}
       />
       <select
-        name="optionList"
+        name="type"
         id="optionList"
-        value={inputType}
-        onChange={(event) => setInputType(event.target.value)}
+        value={formValues.type}
+        onChange={handleInputChange}
       >
         <option>Selecione</option>
-        <option value="entry">Entrada</option>
-        <option value="exit">Saída</option>
+        <option value="Entrada">Entrada</option>
+        <option value="Despesa">Despesa</option>
       </select>
-      <button type="submit">Inserir valor</button>
+      <button onClick={() => handleClick(callback)}>Inserir valor</button>
     </form>
   );
 };
