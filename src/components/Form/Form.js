@@ -1,6 +1,7 @@
 import { useState } from "react";
+import "./Form.css";
 
-const Form = ({ callback }) => {
+const Form = ({ addTransaction }) => {
   const [formValues, setFormValues] = useState({});
 
   const handleSubmit = (event) => {
@@ -12,26 +13,33 @@ const Form = ({ callback }) => {
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const handleClick = (callback) => {
-    callback(formValues);
+  const handleClick = (addTransaction) => {
+    addTransaction(formValues);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
+      <p>Descrição</p>
       <input
         name="description"
+        className="inputDescription"
         type="text"
         placeholder="Digite aqui sua descrição"
         value={formValues.description}
         onChange={handleInputChange}
       />
+
+      <p>Valor</p>
       <input
         name="value"
+        className="inputValue"
         type="text"
         placeholder="R$"
         value={formValues.value}
         onChange={handleInputChange}
       />
+
+      <p>Tipo de Valor</p>
       <select
         name="type"
         id="optionList"
@@ -42,7 +50,13 @@ const Form = ({ callback }) => {
         <option value="Entrada">Entrada</option>
         <option value="Despesa">Despesa</option>
       </select>
-      <button onClick={() => handleClick(callback)}>Inserir valor</button>
+
+      <button
+        className="formButton"
+        onClick={() => handleClick(addTransaction)}
+      >
+        Inserir valor
+      </button>
     </form>
   );
 };

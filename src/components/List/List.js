@@ -1,4 +1,5 @@
 import Card from "../Card/Card";
+import "./List.css";
 
 const List = ({ listTransactions }) => {
   return (

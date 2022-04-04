@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Header from "./components/Header/Header";
 import Form from "./components/Form/Form";
 import List from "./components/List/List";
 import TotalMoney from "./components/TotalMoney/TotalMoney";
@@ -15,17 +16,22 @@ const App = () => {
   };
 
   return (
-    <div>
-      <section>
-        <Form callback={addTransaction} />
-      </section>
-      <section>
-        <TotalMoney listTransactions={listTransactions} />
-      </section>
-      <section>
-        <List listTransactions={listTransactions} />
-      </section>
-    </div>
+    <>
+      <header>
+        <Header />
+      </header>
+      <main className="mainContainer">
+        <div className="formBox">
+          <Form addTransaction={addTransaction} />
+        </div>
+        <div className="moneyBox">
+          <TotalMoney listTransactions={listTransactions} />
+        </div>
+        <section className="transactionBox">
+          <List listTransactions={listTransactions} />
+        </section>
+      </main>
+    </>
   );
 };
 

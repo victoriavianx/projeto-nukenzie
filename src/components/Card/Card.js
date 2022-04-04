@@ -1,3 +1,5 @@
+import "./Card.css";
+
 const Card = ({ transaction }) => {
   const { description, value, type } = transaction;
 
@@ -9,7 +11,7 @@ const Card = ({ transaction }) => {
   };
 
   return (
-    <li>
+    <li className="cardTransaction">
       <p>{description}</p>
       <p>{formatCurrency(value)}</p>
       <span>{type}</span>

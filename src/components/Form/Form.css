@@ -1,0 +1,49 @@
+.form {
+  width: 300px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  margin-top: 39px;
+}
+
+p {
+  font-size: 12px;
+}
+
+input {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 8px;
+  color: #868e96;
+}
+
+.inputDescription {
+  width: 260px;
+  height: 52px;
+}
+
+.inputValue {
+  width: 100px;
+  height: 48px;
+}
+
+#optionList {
+  width: 128px;
+  height: 48px;
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 8px;
+  color: #868e96;
+}
+
+.formButton {
+  width: 260px;
+  height: 48px;
+  background-color: #fd377e;
+  border: 1px solid #fd377e;
+  border-radius: 8px;
+  color: #ffffff;
+}
