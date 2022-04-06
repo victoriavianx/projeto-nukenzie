@@ -1,6 +1,7 @@
 import "./Card.css";
+import Trash from "./trash.png";
 
-const Card = ({ transaction }) => {
+const Card = ({ transaction, removeTransaction }) => {
   const { description, value, type } = transaction;
 
   const formatCurrency = (number) => {
@@ -13,9 +14,11 @@ const Card = ({ transaction }) => {
   return (
     <li className="cardTransaction">
       <p>{description}</p>
-      <p>{formatCurrency(value)}</p>
+      <p id="currency">{formatCurrency(value)}</p>
       <span>{type}</span>
-      <button>Deletar</button>
+      <button onClick={() => removeTransaction(transaction)}>
+        <img src={Trash} alt="trash" />
+      </button>
     </li>
   );
 };
