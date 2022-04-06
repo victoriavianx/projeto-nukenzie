@@ -1,10 +1,11 @@
 import "./Header.css";
+import Logo from "./nu-kenzie.png";
 
 const Header = () => {
   return (
     <div className="top">
       <figure className="imageLogo">
-        <img src="" alt="Logo NuKenzie" />
+        <img src={Logo} alt="Logo NuKenzie" />
       </figure>
       <button className="homeButton">Início</button>
     </div>
