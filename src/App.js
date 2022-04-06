@@ -12,8 +12,14 @@ const App = () => {
     { description: "Conta de luz", type: "Despesa", value: -150 },
   ]);
 
+  const [filterState, setFilterState] = useState([
+    { description: "Salário recebido", type: "Entrada", value: 2500 },
+    { description: "Conta de luz", type: "Despesa", value: -150 },
+  ]);
+
   const addTransaction = (newTransaction) => {
     setListTransactions([...listTransactions, newTransaction]);
+    setFilterState([...listTransactions, newTransaction]);
   };
 
   const removeTransaction = (removeItem) => {
@@ -22,6 +28,7 @@ const App = () => {
     );
 
     setListTransactions(filteredItem);
+    setFilterState(filteredItem);
   };
 
   return (
@@ -37,10 +44,10 @@ const App = () => {
         <div className="transactionBox">
           <Filters
             listTransactions={listTransactions}
-            setListTransactions={setListTransactions}
+            setFilterState={setFilterState}
           />
           <List
-            listTransactions={listTransactions}
+            filterState={filterState}
             removeTransaction={removeTransaction}
           />
         </div>
