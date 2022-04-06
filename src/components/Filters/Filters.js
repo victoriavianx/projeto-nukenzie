@@ -1,8 +1,8 @@
 import "./Filters.css";
 
-const Filters = ({ listTransactions, setListTransactions }) => {
+const Filters = ({ listTransactions, setFilterState }) => {
   const showAllTransactions = () => {
-    return listTransactions;
+    setFilterState(listTransactions);
   };
 
   const filterEntriesTransactions = () => {
@@ -10,7 +10,7 @@ const Filters = ({ listTransactions, setListTransactions }) => {
       (transaction) => transaction.type === "Entrada"
     );
 
-    setListTransactions(filteredEntries);
+    setFilterState(filteredEntries);
   };
 
   const filterExpensesTransactions = () => {
@@ -18,7 +18,7 @@ const Filters = ({ listTransactions, setListTransactions }) => {
       (transaction) => transaction.type === "Despesa"
     );
 
-    setListTransactions(filteredExpenses);
+    setFilterState(filteredExpenses);
   };
 
   return (
