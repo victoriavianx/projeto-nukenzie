@@ -1,0 +1,78 @@
+.menuFilters {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.menuFilters p {
+  font-weight: 700;
+}
+
+.menuFilters button {
+  margin: 0 auto;
+  margin-right: 2vw;
+}
+
+.allButton,
+.entryButton,
+.expenseButton {
+  height: 40px;
+  background-color: #e9ecef;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  margin-right: 12vw;
+  font-family: "Nunito", sans-serif;
+  color: #868e96;
+}
+
+.allButton:hover,
+.entryButton:hover,
+.expenseButton:hover {
+  cursor: pointer;
+  color: #e9ecef;
+  background-color: #868e96;
+}
+
+.allButton:focus,
+.entryButton:focus,
+.expenseButton:focus {
+  color: #e9ecef;
+  background-color: #fd377e;
+}
+
+.allButton {
+  width: 8vw;
+}
+
+.entryButton {
+  width: 10vw;
+}
+
+.expenseButton {
+  width: 10vw;
+}
+
+@media (min-width: 1025px) {
+  .menuFilters {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menuFilters button {
+    margin-right: 35px;
+  }
+
+  .allButton {
+    width: 69px;
+  }
+
+  .entryButton {
+    width: 87px;
+  }
+
+  .expenseButton {
+    width: 92px;
+  }
+}
