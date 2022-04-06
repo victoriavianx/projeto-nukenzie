@@ -2,7 +2,7 @@ import "./TotalMoney.css";
 
 const TotalMoney = ({ listTransactions }) => {
   const totalValue = listTransactions.reduce((acc, currentValue) => {
-    return (acc += Number(currentValue.value));
+    return acc + Number(currentValue.value);
   }, 0);
 
   const formatCurrency = (number) => {
@@ -14,7 +14,7 @@ const TotalMoney = ({ listTransactions }) => {
 
   return (
     <div className="valueBox">
-      <p>Valor total</p>
+      <p>Valor total:</p>
       <span>{formatCurrency(totalValue)}</span>
     </div>
   );
