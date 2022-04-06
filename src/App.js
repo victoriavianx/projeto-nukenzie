@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "./components/Header/Header";
+import Filters from "./components/Filters/Filters";
 import Form from "./components/Form/Form";
 import List from "./components/List/List";
 import TotalMoney from "./components/TotalMoney/TotalMoney";
@@ -7,31 +8,44 @@ import "./App.css";
 
 const App = () => {
   const [listTransactions, setListTransactions] = useState([
-    { description: "Salário recebido", type: "entrada", value: 2500 },
-    { description: "Conta de luz", type: "saída", value: -150 },
+    { description: "Salário recebido", type: "Entrada", value: 2500 },
+    { description: "Conta de luz", type: "Despesa", value: -150 },
   ]);
 
   const addTransaction = (newTransaction) => {
     setListTransactions([...listTransactions, newTransaction]);
   };
 
+  const removeTransaction = (removeItem) => {
+    const filteredItem = listTransactions.filter(
+      (transaction) => transaction !== removeItem
+    );
+
+    setListTransactions(filteredItem);
+  };
+
   return (
-    <>
-      <header>
+    <main>
+      <header className="topContainer">
         <Header />
       </header>
-      <main className="mainContainer">
-        <div className="formBox">
+      <section className="mainContainer">
+        <div className="formMoneyBox">
           <Form addTransaction={addTransaction} />
-        </div>
-        <div className="moneyBox">
           <TotalMoney listTransactions={listTransactions} />
         </div>
-        <section className="transactionBox">
-          <List listTransactions={listTransactions} />
-        </section>
-      </main>
-    </>
+        <div className="transactionBox">
+          <Filters
+            listTransactions={listTransactions}
+            setListTransactions={setListTransactions}
+          />
+          <List
+            listTransactions={listTransactions}
+            removeTransaction={removeTransaction}
+          />
+        </div>
+      </section>
+    </main>
   );
 };
 
