@@ -1,11 +1,14 @@
 import Card from "../Card/Card";
-import "./List.css";
 
-const List = ({ listTransactions }) => {
+const List = ({ listTransactions, removeTransaction }) => {
   return (
     <ul>
       {listTransactions.map((transaction, index) => (
-        <Card transaction={transaction} key={index} />
+        <Card
+          transaction={transaction}
+          removeTransaction={removeTransaction}
+          key={index}
+        />
       ))}
     </ul>
   );
