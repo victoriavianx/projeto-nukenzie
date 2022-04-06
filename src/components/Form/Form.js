@@ -19,37 +19,43 @@ const Form = ({ addTransaction }) => {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <p>Descrição</p>
-      <input
-        name="description"
-        className="inputDescription"
-        type="text"
-        placeholder="Digite aqui sua descrição"
-        value={formValues.description}
-        onChange={handleInputChange}
-      />
+      <div className="inputDescription">
+        <p>Descrição</p>
+        <input
+          name="description"
+          className="inputDescription"
+          type="text"
+          placeholder="Digite aqui sua descrição"
+          value={formValues.description}
+          onChange={handleInputChange}
+        />
+      </div>
 
-      <p>Valor</p>
-      <input
-        name="value"
-        className="inputValue"
-        type="text"
-        placeholder="R$"
-        value={formValues.value}
-        onChange={handleInputChange}
-      />
+      <div className="inputValue">
+        <p>Valor</p>
+        <input
+          name="value"
+          className="inputValue"
+          type="number"
+          placeholder="R$"
+          value={formValues.value}
+          onChange={handleInputChange}
+        />
+      </div>
 
-      <p>Tipo de Valor</p>
-      <select
-        name="type"
-        id="optionList"
-        value={formValues.type}
-        onChange={handleInputChange}
-      >
-        <option>Selecione</option>
-        <option value="Entrada">Entrada</option>
-        <option value="Despesa">Despesa</option>
-      </select>
+      <div className="optionList">
+        <p>Tipo de Valor</p>
+        <select
+          name="type"
+          id="optionList"
+          value={formValues.type}
+          onChange={handleInputChange}
+        >
+          <option>Selecione</option>
+          <option value="Entrada">Entrada</option>
+          <option value="Despesa">Despesa</option>
+        </select>
+      </div>
 
       <button
         className="formButton"
