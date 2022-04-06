@@ -1,9 +1,9 @@
 import Card from "../Card/Card";
 
-const List = ({ listTransactions, removeTransaction }) => {
+const List = ({ filterState, removeTransaction }) => {
   return (
     <ul>
-      {listTransactions.map((transaction, index) => (
+      {filterState.map((transaction, index) => (
         <Card
           transaction={transaction}
           removeTransaction={removeTransaction}
