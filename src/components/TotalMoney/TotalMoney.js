@@ -2,7 +2,14 @@ import "./TotalMoney.css";
 
 const TotalMoney = ({ listTransactions }) => {
   const totalValue = listTransactions.reduce((acc, currentValue) => {
-    return acc + Number(currentValue.value);
+    return (
+      acc +
+      Number(
+        currentValue.type === "Despesa"
+          ? currentValue.value * -1
+          : currentValue.value
+      )
+    );
   }, 0);
 
   const formatCurrency = (number) => {
