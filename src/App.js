@@ -7,15 +7,9 @@ import TotalMoney from "./components/TotalMoney/TotalMoney";
 import "./App.css";
 
 const App = () => {
-  const [listTransactions, setListTransactions] = useState([
-    { description: "Salário recebido", type: "Entrada", value: 2500 },
-    { description: "Conta de luz", type: "Despesa", value: -150 },
-  ]);
+  const [listTransactions, setListTransactions] = useState([]);
 
-  const [filterState, setFilterState] = useState([
-    { description: "Salário recebido", type: "Entrada", value: 2500 },
-    { description: "Conta de luz", type: "Despesa", value: -150 },
-  ]);
+  const [filterState, setFilterState] = useState([]);
 
   const addTransaction = (newTransaction) => {
     setListTransactions([...listTransactions, newTransaction]);
