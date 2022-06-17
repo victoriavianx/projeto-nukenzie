@@ -1,6 +1,10 @@
-import "./Filters.css";
+import { useContext } from "react";
+import { TransactionsContext } from "../../providers/transactions/transactions";
+import { Menu } from "./styles";
 
-const Filters = ({ listTransactions, setFilterState }) => {
+const Filters = () => {
+  const { listTransactions, setFilterState } = useContext(TransactionsContext);
+
   const showAllTransactions = () => {
     setFilterState(listTransactions);
   };
@@ -22,7 +26,7 @@ const Filters = ({ listTransactions, setFilterState }) => {
   };
 
   return (
-    <menu className="menuFilters">
+    <Menu>
       <p>Resumo Financeiro</p>
       <nav>
         <button className="allButton" onClick={showAllTransactions}>
@@ -35,7 +39,7 @@ const Filters = ({ listTransactions, setFilterState }) => {
           Despesas
         </button>
       </nav>
-    </menu>
+    </Menu>
   );
 };
 

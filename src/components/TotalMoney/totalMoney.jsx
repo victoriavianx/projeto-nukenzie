@@ -1,6 +1,10 @@
-import "./TotalMoney.css";
+import { useContext } from "react";
+import { TransactionsContext } from "../../providers/transactions/transactions";
+import { BoxValue } from "./styles";
 
-const TotalMoney = ({ listTransactions }) => {
+const TotalMoney = () => {
+  const { listTransactions } = useContext(TransactionsContext);
+
   const totalValue = listTransactions.reduce((acc, currentValue) => {
     return (
       acc +
@@ -20,10 +24,10 @@ const TotalMoney = ({ listTransactions }) => {
   };
 
   return (
-    <div className="valueBox">
+    <BoxValue>
       <p>Valor total:</p>
       <span>{formatCurrency(totalValue)}</span>
-    </div>
+    </BoxValue>
   );
 };
 

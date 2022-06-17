@@ -1,5 +1,5 @@
-import "./Card.css";
-import Trash from "./trash.png";
+import { BoxCard } from "./styles";
+import Trash from "../../assets/trash.png";
 
 const Card = ({ transaction, removeTransaction }) => {
   const { description, value, type } = transaction;
@@ -11,15 +11,21 @@ const Card = ({ transaction, removeTransaction }) => {
     });
   };
 
+  const borderStyle = {
+    borderLeft: type === "Entrada" ? "5px solid #03B898" : "5px solid #dc143c",
+  };
+
   return (
-    <li className="cardTransaction">
-      <p>{description}</p>
-      <p id="currency">{formatCurrency(value)}</p>
-      <span>{type}</span>
+    <BoxCard style={borderStyle}>
+      <div>
+        <p>{description}</p>
+        <span>{type}</span>
+      </div>
+      <p>{formatCurrency(value)}</p>
       <button onClick={() => removeTransaction(transaction)}>
         <img src={Trash} alt="trash" />
       </button>
-    </li>
+    </BoxCard>
   );
 };
 

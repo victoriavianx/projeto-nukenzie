@@ -1,14 +1,24 @@
-import "./Header.css";
-import Logo from "./nu-kenzie.png";
+import { Box, LogoBox } from "./styles";
+import Logo from "../../assets/logo.png";
+import { useHistory } from "react-router-dom";
 
 const Header = () => {
+  const history = useHistory();
+
+  const handleBack = () => {
+    return history.push("/");
+  };
+
   return (
-    <div className="top">
-      <figure className="imageLogo">
-        <img src={Logo} alt="Logo NuKenzie" />
-      </figure>
-      <button className="homeButton">Início</button>
-    </div>
+    <Box>
+      <LogoBox>
+        <figure>
+          <img src={Logo} alt="logo-nukenzie" />
+        </figure>
+        <h1>Kenzie</h1>
+      </LogoBox>
+      <button onClick={handleBack}>Início</button>
+    </Box>
   );
 };
 
