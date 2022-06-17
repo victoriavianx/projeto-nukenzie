@@ -1,4 +1,4 @@
-import Header from "../../components/Header/header";
+import Header from "../../components/Header/Header";
 import Form from "../../components/Form/form";
 import TotalMoney from "../../components/TotalMoney/totalMoney";
 import Filters from "../../components/Filters/filters";
