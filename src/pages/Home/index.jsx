@@ -1,8 +1,8 @@
 import Header from "../../components/Header/Header";
-import Form from "../../components/Form/form";
-import TotalMoney from "../../components/TotalMoney/totalMoney";
-import Filters from "../../components/Filters/filters";
-import List from "../../components/List/list";
+import Form from "../../components/Form/Form";
+import TotalMoney from "../../components/TotalMoney/TotalMoney";
+import Filters from "../../components/Filters/Filters";
+import List from "../../components/List/List";
 import { Container, Content } from "./styles";
 
 const Home = () => {

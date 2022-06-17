@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { TransactionsContext } from "../../providers/transactions/transactions";
-import Card from "../Card/card";
+import Card from "../Card/Card";
 import NoTransactions from "../NoTransaction";
 import { Box } from "../NoTransaction/styles";
 
