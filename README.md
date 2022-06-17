@@ -2,6 +2,8 @@
 
 *Nukenzie* é um projeto simples para simular a organização de sua vida financeira. O projeto tem uma interface descomplicada e limpa, além de ser responsiva, é fácil de utilizar.
 
+*[Clique aqui para acessar o app](https://nukenzie.netlify.app/)*
+
 ## 💻 Desenvolvimento
 
 Esta foi minha primeira aplicação em React, de início tinha uma estrutura bem básica e as funcionalidades do projeto eram todas passadas pelas props dos componentes - em certos casos as props tinham de ser passadas repetidamente até chegar no componente desejado. Para resolver esse problema fiz uso do Context API, retornando um código menos poluído e de fácil manutenção. Foi adicionado também uma tela inicial ao projeto e a responsividade da aplicação foi feita com mais cautela.
