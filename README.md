@@ -2,7 +2,7 @@
 
 *Nukenzie* é um projeto simples para simular a organização de sua vida financeira. O projeto tem uma interface descomplicada e limpa, além de ser responsiva, é fácil de utilizar.
 
-*[Clique aqui para acessar o app](https://nukenzie.netlify.app/)*
+→ *[Clique aqui para acessar o app](https://nukenzie.netlify.app/)*
 
 ## 💻 Desenvolvimento
 
