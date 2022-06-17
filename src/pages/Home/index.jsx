@@ -1,4 +1,4 @@
-import Header from "../../components/Header/header.jsx";
+import Header from "../../components/Header/header";
 import Form from "../../components/Form/form";
 import TotalMoney from "../../components/TotalMoney/totalMoney";
 import Filters from "../../components/Filters/filters";
